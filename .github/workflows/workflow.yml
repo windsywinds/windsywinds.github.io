@@ -47,7 +47,7 @@ jobs:
         run: npm install  # Adjust this based on your project setup
 
       - name: Build
-        run: npm run build -- --output-folder dist # Adjust this based on your project setup
+        run: npm run build
 
   # Deployment job
   deploy:
