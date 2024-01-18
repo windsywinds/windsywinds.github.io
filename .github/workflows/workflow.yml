@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+env:
+  VITE_API_KEY: ${{ secrets.FIREBASE_APY_KEY }}
+  VITE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+  VITE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+  VITE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+  VITE_MESSAGING_ID: ${{ secrets.FIREBASE_MESSAGING_ID }}
+  VITE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+  VITE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+
+
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: main
+          folder: dist
