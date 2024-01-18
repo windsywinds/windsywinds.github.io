@@ -8,7 +8,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getMessaging } from "firebase/messaging";
 
 
-const API_KEY = import.meta.env.VITE_API_KEY
+const API_KEY = "AIzaSyCyK1q3CFWJoS4uvN7XIIKda1VJPS5hmAA"
 const AUTH_KEY = import.meta.env.VITE_AUTH_DOMAIN
 const PROJECT_ID = import.meta.env.VITE_PROJECT_ID
 const STORAGE_BUCKET = import.meta.env.VITE_STORAGE_BUCKET
