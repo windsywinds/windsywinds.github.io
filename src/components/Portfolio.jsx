@@ -3,13 +3,7 @@ import Title from "./Title";
 
 import { React, useState, useEffect, useRef } from "react";
 import { db, auth } from "../firebase.config";
-import {
-  getDocs,
-  collection,
-  query,
-  orderBy,
-  onSnapshot,
-} from "firebase/firestore";
+import { getDocs, collection, query, orderBy, onSnapshot } from "firebase/firestore";
 
 function Portfolio() {
   const [projects, setProjects] = useState([]); // Move the data state here
@@ -18,6 +12,7 @@ function Portfolio() {
     const getProjectList = async () => {
       try {
         // Fetch data from the database with orderBy
+        console.log("Fetching Project entrys")
         const projectsCollection = collection(db, "projects");
         const projectsQuery = query(projectsCollection, orderBy("order"));
         const projectsSnapshot = await getDocs(projectsQuery);

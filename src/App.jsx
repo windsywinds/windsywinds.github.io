@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="bg-[#1d1a18]">
       <LogViewer />
       <div className="flex w-full">
         <Auth />

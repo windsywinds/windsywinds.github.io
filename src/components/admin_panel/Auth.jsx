@@ -94,10 +94,15 @@ const Auth = () => {
     }
   };
 
-  useEffect(() => {
-    checkAuthState();
 
-    // Other useEffect cleanup or dependencies, if needed
+  //enable automatic checking of user login or leave commented out to require manual login each time
+
+  useEffect(() => {
+    const isOwner = localStorage.getItem("isOwner");
+    if (isOwner) {
+      checkAuthState();
+    }
+    
   }, []);
 
   const handleClickOutsideLogin = (event) => {
@@ -134,9 +139,9 @@ const Auth = () => {
           ></div>
         </div>
       ) : (
-        <div className="flex w-1/6 py-2 px-2">
+        <div className="flex w-1/3 py-2 px-2">
           <button
-            className="bg-slate-200 rounded-xl pl-2 outline-none w-full py-2"
+            className="bg-slate-200 rounded-xl px-4 outline-none w-full py-2"
             onClick={logoutClick}
           >
             Logout

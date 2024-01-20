@@ -26,6 +26,7 @@ const ManageProject = () => {
   const getProjectList = async () => {
     try {
       // Fetch data from the database
+      console.log("Updating project list")
       const projectsCollection = collection(db, "projects");
       const projectsQuery = query(projectsCollection);
       const projectsSnapshot = await getDocs(projectsQuery);
@@ -47,7 +48,7 @@ const ManageProject = () => {
     
 
     getProjectList();
-  }, [projects]);
+  }, []);
 
   const selectProject = (selectedProject) => {
     if (!selectedProject) {
@@ -119,34 +120,36 @@ const ManageProject = () => {
 
   const deleteProject = async (e) => {
     e.preventDefault();
-    const collectionName = "projects";
-    const entryRef = doc(db, collectionName, projectID);
-
-    try {
-      await deleteDoc(entryRef);
-
-      // Clear input fields after successful submission
-      setProjectID("");
-      setOrder("");
-      setTitle("");
-      setSlug("");
-      setimgURL("");
-      setGitURL("");
-      setDemoURL("");
-      setStack("");
-      getProjectList();
-
-      console.log("Project Deleted");
-    } catch (error) {
-      console.error("Error deleting entry:", error);
-    }
+    const isConfirmed = window.confirm(`Confirm deletion of project ${projectID}?`);
+              if (isConfirmed && projectID) {
+                const collectionName = "projects";
+                const entryRef = doc(db, collectionName, projectID);
+                try {
+                  await deleteDoc(entryRef);
+            
+                  // Clear input fields after successful submission
+                  setProjectID("");
+                  setOrder("");
+                  setTitle("");
+                  setSlug("");
+                  setimgURL("");
+                  setGitURL("");
+                  setDemoURL("");
+                  setStack("");
+                  getProjectList();
+            
+                  console.log("Project Deleted");
+                } catch (error) {
+                  console.error("Error deleting entry:", error);
+                }
+              }
   };
 
   return (
     <div className="flex flex-col w-full sm:w-1/3 bg-white border-4 rounded-xl drop-shadow-lg">
-      <h2 className="font-bold text-3xl"> Create or Update a Project Entry</h2>
+      <h2 className="font-bold ml-2 text-xl sm:text-3xl"> Create & Update Projects</h2>
 
-      <div className="flex flex-row w-full gap-8 ml-4 py-4">
+      <div className="flex flex-row w-full gap-8 ml-4 py-4 text-sm sm:text-md">
         <div className="flex flex-row">
           <select
             className="px-2 py-1 rounded-lg"
@@ -180,7 +183,7 @@ const ManageProject = () => {
         className="flex flex-col w-full gap-2 px-2 py-2"
         onSubmit={createOrUpdateEntry}
       >
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <input
             placeholder="Project ID"
             name="projectID"
@@ -238,15 +241,15 @@ const ManageProject = () => {
           value={stack}
           onChange={(e) => setStack(e.target.value)}
         />
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 text-sm sm:text-md">
           <button
-            className="bg-blue-500 py-2 px-6 rounded-lg w-1/4"
+            className="bg-blue-500 py-2 px-6 rounded-lg w-1/2 sm:w-1/4"
             type="submit"
           >
             Submit
           </button>
           <button
-            className="bg-blue-500 py-2 px-6 rounded-lg w-1/4"
+            className="bg-blue-500 py-2 px-6 rounded-lg w-1/2 sm:w-1/4"
             onClick={clearForm}
           >
             Clear Form

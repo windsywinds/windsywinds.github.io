@@ -6,9 +6,8 @@ import ManageProject from "./projects/manageProjects";
 
 export const View = () => {
   return (
-    <div className="flex flex-col w-full">
-      <div className="flex flex-col gap-6">
-        <p>Update working</p>
+    <div className="bg-white flex flex-col w-full">
+      <div className="flex flex-col my-4 mx-2 gap-6">
         <DisplayStats />
         <ManageProject />
       </div>
