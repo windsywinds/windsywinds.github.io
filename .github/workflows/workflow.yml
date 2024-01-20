@@ -2,7 +2,7 @@
 name: Deploy static content to Pages
 
 env:
-  VITE_API_KEY: ${{ secrets.FIREBASE_APY_KEY }}
+  VITE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
   VITE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
   VITE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
   VITE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
