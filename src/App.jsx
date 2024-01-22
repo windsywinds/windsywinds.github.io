@@ -7,6 +7,7 @@ import Intro from "./components/Intro";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import LinkBar from "./components/LinkBar";
 
 import Auth from "./components/admin_panel/Auth";
 import { LogViewer } from "./components/statistics/logViewer";
@@ -30,7 +31,13 @@ function App() {
       </div>
 
       <div className="bg-[#1d1a18] text-stone-200 min-h-screen font-inter ">
+
+        <div className="flex absolute top-5 left-5">
+          <LinkBar />
+        </div>
+
         <Hero scrollToContact={scrollToContact} refHero={heroRef} />
+        
         <div className="max-w-5xl w-11/12 mx-auto ">
           <Intro />
 

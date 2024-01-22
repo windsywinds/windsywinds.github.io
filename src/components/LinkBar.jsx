@@ -1,11 +1,12 @@
 import React from "react";
 
-const Footer = ({ scrollToHero }) => {
+const LinkBar = () => {
+
+
   return (
-    <div className="py-5 text-center">
-      <div className="container max-w-screen-lg mx-auto">
-        <div>
-          <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-col">
+        <div className="flex flex-col gap-4">
+            <div>
             <a
               href="https://linkedin.com/in/windsor-sam"
               target="blank"
@@ -22,6 +23,9 @@ const Footer = ({ scrollToHero }) => {
                 </g>
               </svg>
             </a>
+            </div>
+
+            <div>
             <a
               href="https://github.com/windsywinds"
               target="blank"
@@ -46,6 +50,9 @@ const Footer = ({ scrollToHero }) => {
                 </g>
               </svg>
             </a>
+            </div>
+
+            <div>
             <a 
                         href="https://instagram.com/windsywinds"
                         target="blank"
@@ -65,25 +72,9 @@ const Footer = ({ scrollToHero }) => {
                          </g>
                          </svg>
                     </a>
-          </div>
+            </div>
         </div>
-      </div>
-
-      <div className="flex flex-row pt-4 items-center justify-center">
-        <p className="pt-4 flex-grow flex-shrink text-center">
-          &copy; {new Date().getFullYear()} Sam Windsor. All rights reserved.
-        </p>
-        <div className="flex-shrink-0 flex-grow-0">
-          <button
-            onClick={() => scrollToHero()}
-            style={{ animation: "bounce 2s infinite" }}
-          >
-            <i className="fa-solid fa-arrow-up opacity-20 text-xl"></i>
-          </button>
-        </div>
-      </div>
     </div>
   );
 };
-
-export default Footer;
+export default LinkBar;
