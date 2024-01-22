@@ -132,7 +132,7 @@ const Auth = () => {
       {!loggedIn ? (
         <div className="flex w-1/3 bg-[#1d1a18]">
           <div
-            className="flex w-1/6 h-[50px] z-9 absolute cursor-default"
+            className="flex w-[75px] h-[50px] z-9 absolute top-0 right-0 cursor-default "
             onClick={() => {
               setShowDropdown(!showDropdown);
             }}

@@ -12,7 +12,6 @@ function Portfolio() {
     const getProjectList = async () => {
       try {
         // Fetch data from the database with orderBy
-        console.log("Fetching Project entrys")
         const projectsCollection = collection(db, "projects");
         const projectsQuery = query(projectsCollection, orderBy("order"));
         const projectsSnapshot = await getDocs(projectsQuery);

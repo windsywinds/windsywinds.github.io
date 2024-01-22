@@ -146,7 +146,7 @@ const ManageProject = () => {
   };
 
   return (
-    <div className="flex flex-col w-full sm:w-1/3 bg-white border-4 rounded-xl drop-shadow-lg">
+    <div className="flex flex-col w-full md: 1/2 lg:w-1/3 bg-white border-4 rounded-xl drop-shadow-lg">
       <h2 className="font-bold ml-2 text-xl sm:text-3xl"> Create & Update Projects</h2>
 
       <div className="flex flex-row w-full gap-8 ml-4 py-4 text-sm sm:text-md">
@@ -164,7 +164,7 @@ const ManageProject = () => {
             <option value="">Select Project</option>
             {projects?.map((project) => (
               <option key={project.id} value={project.id}>
-                {project.title}
+                {project.title} | Order: {project.order}
               </option>
             ))}
           </select>
@@ -183,7 +183,7 @@ const ManageProject = () => {
         className="flex flex-col w-full gap-2 px-2 py-2"
         onSubmit={createOrUpdateEntry}
       >
-        <div className="flex flex-col sm:flex-row gap-2">
+        <div className="flex flex-col md:flex-row w-full justify-between gap-2">
           <input
             placeholder="Project ID"
             name="projectID"

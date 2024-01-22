@@ -1,6 +1,7 @@
 import React from "react";
 import background from "/images/herobg.png";
 import { useState, useEffect, useRef } from "react";
+import LinkBar from "./LinkBar";
 
 const Hero = ({ scrollToContact, refHero }) => {
   const [downloadTip, setDownloadTip] = useState(false)
@@ -26,6 +27,11 @@ const Hero = ({ scrollToContact, refHero }) => {
 
   return (
     <div className="" ref={refHero}>
+      <div className="flex absolute">
+      <div className="flex relative top-5 left-5 ">
+          <LinkBar />
+          </div>
+        </div>
       <div
         className="h-screen bg-cover ms:bg-contain bg-no-repeat bg-center flex flex-col overflow-hidden  "
         style={{
