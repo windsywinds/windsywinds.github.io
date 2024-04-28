@@ -1,7 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import Title from "./Title";
 
 const Contact = ({ refContact }) => {
+  const [emailError, setEmailError] = useState("");
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+
+  const validateEmail = (e) => {
+    const email = e.target.value;
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    setEmailError(isValid ? "" : "Please enter a valid email address");
+    setIsSubmitDisabled(!isValid);
+  };
   return (
     <div className="flex flex-col mb-10 mx-auto pt-20" ref={refContact}>
       <div className="flex justify-center items-center">
@@ -22,19 +32,25 @@ const Contact = ({ refContact }) => {
             type="email"
             name="email"
             placeholder="Your@Email.com"
-            className="my-2 p-2 bg-transparent border-2 rounded-md focus:outline-none"
+            className={`my-2 p-2 bg-transparent border-2 rounded-md focus:outline-none ${
+              emailError && "border-red-500"
+            }`}
             required
-          ></input>
+            onChange={validateEmail}
+          />
+          {emailError && <p className="text-red-500 mb-2">{emailError}</p>}
           <textarea
             name="message"
             placeholder="Your Message"
             rows="10"
             className="mb-4 p-2 bg-transparent border-2 rounded-md focus:outline-none"
+            required
           ></textarea>
           <button
             type="submit"
             className="text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md text-white bg-gradient-to-r from-[#196aa7] to-[#1e82cd] drop-shadow-md hover:stroke-white"
             required
+            disabled={isSubmitDisabled}
           >
             Send!
           </button>
