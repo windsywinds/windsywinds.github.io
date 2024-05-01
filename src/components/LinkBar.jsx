@@ -1,12 +1,12 @@
 import React from "react";
 import HoverTip from "./utils/hovertips";
 
-const LinkBar = ({tipPosition}) => {
+const LinkBar = ({tipPosition, iconDirection}) => {
 
 
   return (
     <div className="flex flex-col">
-        <div className="flex flex-col gap-4">
+        <div className={`flex flex-${iconDirection ? iconDirection : 'row' } gap-4`}>
             <div>
               <HoverTip
               tip="Connect with me on LinkedIn"
