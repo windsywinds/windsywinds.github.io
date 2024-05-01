@@ -41,7 +41,7 @@ const Hero = ({ scrollToContact, refHero }) => {
             tip={'Download CV'}
             position={"bottom-middle"}
             >            
-              <button href="/downloads/Sam-Windsor-CV.pdf" download 
+              <a href="/downloads/Sam-Windsor-CV.pdf" download 
               className="flex items-center justify-center"
                 >
                 <svg
@@ -59,7 +59,7 @@ const Hero = ({ scrollToContact, refHero }) => {
                   />
                 </svg>
                 
-              </button>
+              </a>
               </HoverTip>
 
               
