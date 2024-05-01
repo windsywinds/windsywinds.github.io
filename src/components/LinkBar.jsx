@@ -1,7 +1,7 @@
 import React from "react";
 import HoverTip from "./utils/hovertips";
 
-const LinkBar = () => {
+const LinkBar = ({tipPosition}) => {
 
 
   return (
@@ -10,7 +10,7 @@ const LinkBar = () => {
             <div>
               <HoverTip
               tip="Connect with me on LinkedIn"
-              position="right"
+              position={tipPosition}
               >
             <a
               href="https://linkedin.com/in/windsor-sam"
@@ -34,7 +34,7 @@ const LinkBar = () => {
             <div>
             <HoverTip
               tip="See my projects on GitHub"
-              position="right"
+              position={tipPosition}
               >
             <a
               href="https://github.com/windsywinds"
@@ -66,7 +66,7 @@ const LinkBar = () => {
             <div>
             <HoverTip
               tip="Check out my photography"
-              position="right"
+              position={tipPosition}
               >
             <a 
                         href="https://instagram.com/windsywinds"
