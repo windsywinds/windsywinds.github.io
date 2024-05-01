@@ -1,5 +1,5 @@
 import PortfolioItem from "./PortfolioItem";
-import Title from "./Title";
+import Title from "./utils/Title";
 
 import { React, useState, useEffect, useRef } from "react";
 import { db, auth } from "../firebase.config";

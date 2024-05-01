@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Title from "./Title";
+import Title from "./utils/Title";
 
 const Contact = ({ refContact }) => {
   const [emailError, setEmailError] = useState("");

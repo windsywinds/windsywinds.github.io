@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 
-import Title from "./components/Title";
+import Title from "./components/utils/Title";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 import Portfolio from "./components/Portfolio";
