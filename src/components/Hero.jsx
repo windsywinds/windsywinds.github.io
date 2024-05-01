@@ -2,6 +2,7 @@ import React from "react";
 import background from "/images/herobg.png";
 import { useState, useEffect, useRef } from "react";
 import LinkBar from "./LinkBar";
+import HoverTip from "./utils/hovertips";
 
 const Hero = ({ scrollToContact, refHero }) => {
   const [downloadTip, setDownloadTip] = useState(false)
@@ -9,21 +10,7 @@ const Hero = ({ scrollToContact, refHero }) => {
   const downloadRef = useRef(null);
   const contactRef = useRef(null);
 
-  const handleTips = (event) => {
-    if (downloadRef.current && !downloadRef.current.contains(event.target)) {
-      setDownloadTip(false);
-    } else if (contactRef.current && !contactRef.current.contains(event.target)) {
-      setContactTip(false);
-    }
-  };
 
-  useEffect(() => {
-    document.addEventListener('mouseenter', handleTips);
-
-    return () => {
-      document.removeEventListener('mouseenter', handleTips);
-    };
-  }, []);
 
   return (
     <div className="" ref={refHero}>
@@ -49,17 +36,21 @@ const Hero = ({ scrollToContact, refHero }) => {
             </p>
 
             <div className="flex flex-row text-right items-center justify-end gap-3 pr-1">
-              <a href="/downloads/Sam-Windsor-CV.pdf" download 
-                onMouseEnter={() => setDownloadTip(true)}
-                onMouseLeave={() => setDownloadTip(false)}
-                ref={downloadRef}>
+
+            <HoverTip 
+            tip={'Download CV'}
+            position={"bottom-middle"}
+            >            
+              <button href="/downloads/Sam-Windsor-CV.pdf" download 
+              className="flex items-center justify-center"
+                >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="2"
                   stroke="currentColor"
-                  className="md:w-9 md:h-9 w-5 h-5 opacity-85"
+                  className="md:w-10 md:h-10 w-5 h-5 opacity-85"
                 >
                   <path
                     strokeLinecap="round"
@@ -68,14 +59,20 @@ const Hero = ({ scrollToContact, refHero }) => {
                   />
                 </svg>
                 
-              </a>
+              </button>
+              </HoverTip>
 
+              
+
+              <HoverTip 
+              tip={'Jump to Contact Form'}
+              position={"bottom-middle"}
+              >
               <button onClick={() => scrollToContact()}
-              onMouseEnter={() => setContactTip(true)}
-              onMouseLeave={() => setContactTip(false)}
-              ref={contactRef}>
+              className="flex items-center justify-center"
+              >
                 <svg
-                  className="md:w-11 md:h-11 w-5 h-5 opacity-85"
+                  className="md:w-12 md:h-12 w-6 h-6 opacity-85"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   strokeWidth="0"
@@ -86,20 +83,14 @@ const Hero = ({ scrollToContact, refHero }) => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M2.8 4C1.86451 4 1.0468 4.46923 0.544325 5.16792C0.20074 5.64567 0 6.23499 0 6.86667V17.1333C0 18.682 1.21964 20 2.8 20H10.2C10.7523 20 11.2 19.5523 11.2 19C11.2 18.4477 10.7523 18 10.2 18H2.8C2.39214 18 2 17.6466 2 17.1333V7.94766L7.77948 14.3096C8.96986 15.6199 11.0301 15.6199 12.2205 14.3096L18 7.94766V12.1333C18 12.6856 18.4477 13.1333 19 13.1333C19.5523 13.1333 20 12.6856 20 12.1333V6.86667C20 6.235 19.7993 5.64567 19.4557 5.16792C18.9532 4.46923 18.1355 4 17.2 4H2.8ZM9.25983 12.9647L2.9327 6H17.0673L10.7402 12.9647C10.3434 13.4015 9.65662 13.4015 9.25983 12.9647ZM18.2929 21.2929C17.9024 21.6834 17.9024 22.3166 18.2929 22.7071C18.6834 23.0976 19.3166 23.0976 19.7071 22.7071L22.7071 19.7071C23.0976 19.3166 23.0976 18.6834 22.7071 18.2929L19.7071 15.2929C19.3166 14.9024 18.6834 14.9024 18.2929 15.2929C17.9024 15.6834 17.9024 16.3166 18.2929 16.7071L19.5858 18H15C14.4477 18 14 18.4477 14 19C14 19.5523 14.4477 20 15 20H19.5858L18.2929 21.2929Z"
-                  ></path>{" "}
+                  />
                 </svg>
                 
               </button>
-            </div>
-            <div className="flex flex-row text-right items-center justify-end gap-3 pr-1">
-            {downloadTip &&
-                  <span className="bg-slate-800 rounded-xl drop-shadow-lg absolute text-xs mt-8 px-6 py-2 z-1">Download CV</span>
-              }
-            {contactTip &&
-                  <span className="bg-slate-800 rounded-xl drop-shadow-lg absolute text-xs mt-8 px-6 py-2 z-1">Jump to Contact Form</span>
-              }
+              </HoverTip>
 
             </div>
+            
           </div>
         </div>
 

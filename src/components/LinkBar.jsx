@@ -1,4 +1,5 @@
 import React from "react";
+import HoverTip from "./utils/hovertips";
 
 const LinkBar = () => {
 
@@ -7,6 +8,10 @@ const LinkBar = () => {
     <div className="flex flex-col">
         <div className="flex flex-col gap-4">
             <div>
+              <HoverTip
+              tip="Connect with me on LinkedIn"
+              position="right"
+              >
             <a
               href="https://linkedin.com/in/windsor-sam"
               target="blank"
@@ -23,9 +28,14 @@ const LinkBar = () => {
                 </g>
               </svg>
             </a>
+            </HoverTip>
             </div>
 
             <div>
+            <HoverTip
+              tip="See my projects on GitHub"
+              position="right"
+              >
             <a
               href="https://github.com/windsywinds"
               target="blank"
@@ -50,9 +60,14 @@ const LinkBar = () => {
                 </g>
               </svg>
             </a>
+            </HoverTip>
             </div>
 
             <div>
+            <HoverTip
+              tip="Check out my photography"
+              position="right"
+              >
             <a 
                         href="https://instagram.com/windsywinds"
                         target="blank"
@@ -72,6 +87,7 @@ const LinkBar = () => {
                          </g>
                          </svg>
                     </a>
+                    </HoverTip>
             </div>
         </div>
     </div>
