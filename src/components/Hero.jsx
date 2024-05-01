@@ -16,7 +16,7 @@ const Hero = ({ scrollToContact, refHero }) => {
     <div className="" ref={refHero}>
       <div className="flex absolute">
       <div className="flex relative top-5 left-5 ">
-          <LinkBar tipPosition="right"/>
+          <LinkBar iconDirection="col" tipPosition="right"/>
           </div>
         </div>
       <div
