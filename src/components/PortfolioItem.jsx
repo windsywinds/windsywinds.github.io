@@ -18,14 +18,17 @@ function PortfolioItem({
         className="w-full h-full object-cover curser-pointer"
       />
       </div>
-      <div className="flex flex-col w-full h-2/3 items-start justify-between p-4">
+      <div className="flex flex-col w-full h-2/3 items-start justify-between gap-2 pb-4 pt-2 px-4">
         <div className="">
-        <h3 className="text-lg md:text-xl mb-2 md:mb-3 font-semibold">
+        <h2 className="text-lg md:text-xl mb-1 md:mb-2 font-semibold">
           {" "}
           {title}
-        </h3>
-        <h3 className="text-lg md:text-sm mb-2 md:mb-3"> {slug}</h3>
-        <p className="flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm">
+        </h2>
+        <h3 className="text-lg md:text-sm "> {slug}</h3>
+        
+        </div>
+        <div className="flex h-full gap-2 flex-row items-end">
+        <p className="flex flex-wrap gap-2 flex-row items-end justify-start text-xs md:text-sm">
           {stack?.map((item) => (
             <span
               key={item}
