@@ -31,8 +31,8 @@ const Hero = ({ scrollToContact, refHero }) => {
             <h1 className="text-4xl md:text-7xl dark:text-white mb-1 md:mb-3 font-bold ">
               Sam Windsor,
             </h1>
-            <p className="text-base md:text-xl pl-1 pr-1 mb-3 font-medium text-right ">
-              Web Developer.
+            <p className="text-base md:text-2xl pl-1 pr-1 mb-3 font-medium text-right ">
+              Developer.
             </p>
 
             <div className="flex flex-row text-right items-center justify-end gap-3 pr-1">
