@@ -18,7 +18,6 @@ export const LogViewer = () => {
           totalViews: increment(1),
           lastView: new Date(),
         });
-        console.log("New Viewer Logged");
       } catch (error) {
         console.error("Error updating NewViewerCount document:", error);
       }
@@ -29,10 +28,9 @@ export const LogViewer = () => {
           totalViews: increment(1),
           lastView: new Date(),
         });
-        console.log("Repeat Viewer");
         return;
       } catch (error) {
-        console.error("Error updating RepeatViewerCount document:", error);
+        console.error("Error updating:", error);
       }
     }
   };
@@ -48,7 +46,6 @@ export const LogViewer = () => {
 
   useEffect(() => {
     checkViewState();
-    // Other useEffect cleanup or dependencies, if needed
   }, []);
 
   return null;
