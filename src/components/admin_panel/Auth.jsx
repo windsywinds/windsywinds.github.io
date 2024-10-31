@@ -95,8 +95,7 @@ const Auth = () => {
   };
 
 
-  //enable automatic checking of user login or leave commented out to require manual login each time
-
+  //enable automatic checking of user login or comment out to require manual login each time
   useEffect(() => {
     const isOwner = localStorage.getItem("isOwner");
     if (isOwner) {
