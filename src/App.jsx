@@ -5,6 +5,7 @@ import Title from "./components/utils/Title";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 import Portfolio from "./components/Portfolio";
+import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -33,10 +34,12 @@ function App() {
 
         <Hero scrollToContact={scrollToContact} refHero={heroRef} />
         
-        <div className="max-w-5xl w-11/12 mx-auto ">
+        <div className="max-w-5xl w-11/12 mx-auto space-y-16">
           <Intro />
 
           <Portfolio />
+
+          <Timeline />
 
           <Contact refContact={contactRef} />
 
