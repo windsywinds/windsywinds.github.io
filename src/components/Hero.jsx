@@ -42,7 +42,7 @@ const Hero = ({ scrollToContact, refHero }) => {
             position={"bottom-middle"}
             >            
               <a href="/downloads/Sam-Windsor-CV.pdf" download 
-              className="flex items-center justify-center"
+              className="hidden flex items-center justify-center"
                 >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
