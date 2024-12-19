@@ -8,7 +8,8 @@ const HoverTip = ({children, tip, position, className}) => {
         "top-middle": `w-max max-w-[200px] bottom-[120%] left-1/2 -translate-x-1/2 `,
         "bottom-middle": `w-max max-w-[200px] top-[120%] left-1/2 -translate-x-1/2 `,
         "right": `w-max max-w-[200px] left-[120%] top-1/2 -translate-y-1/2 `,
-        "left": `w-max max-w-[200px] right-[120%] top-1/2 -translate-y-1/2 `
+        "left": `w-max max-w-[200px] right-[120%] top-1/2 -translate-y-1/2 `,
+        "hidden": `hidden`
     }
 
     return(
