@@ -3,7 +3,7 @@ import React from "react";
 function Intro() {
   return (
     <div className="intro">
-      <div className="flex items-start justify-center flex-col text-left pt-20 pb-16 pl-10 pr-10">
+      <div className="flex items-start justify-center flex-col text-left pt-20 pl-10 pr-10">
         <p className="text-sm mb-2 font-bold">
           Hi! I'm Sam, a Developer, Photographer, and Snowboard coach. After
           hanging up my snowboard boots for a career change, I completed a
