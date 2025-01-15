@@ -39,7 +39,7 @@ function App() {
 
           <Portfolio />
 
-          <Timeline />
+
 
           <Contact refContact={contactRef} />
 
